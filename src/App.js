@@ -6,13 +6,14 @@ import Edit from './Components/Edit/Edit';
 import View from './Components/View/View';
 import Search from './Components/Search/Search';
 import Error from './Components/Error/Error';
+import {data} from './data';
 
 function App() {
   return (
     <Router>
     <Header/>
       <Routes>
-        <Route exact path="/" element={<Home/>}/>
+        <Route exact path="/" element={<Home data={data.employees}/>}/>
         <Route path="/add" element={<Add/>}/>
         <Route path="/view" element={<View/>}/>
         <Route path="/edit" element={<Edit/>}/>
