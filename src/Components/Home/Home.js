@@ -9,11 +9,12 @@ const Home = ({ data }) => {
     <div>
       {data.map((item) => {
         return (
-          <div>
-            <li className="card">
-              {item.name}
-              {item.children && <Home data={item.children} />}
-            </li>
+          <div key={item.id} className="hierarchy">
+            <div className="card">
+              <h1>{item.name}</h1>
+              <p>{item.designation}</p>
+            </div>
+            {item.children && <Home data={item.children} />}
           </div>
         );
       })}

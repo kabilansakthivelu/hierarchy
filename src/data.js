@@ -20,12 +20,20 @@ export const data = {
                         "phone" : 1234567890,
                         "email" : "echo@gmail.com",
                         "designation" : "Team Leader",
-                        },{
-                        "id" : 7,
-                        "name" : "Foxtrot",
-                        "phone" : 1234567890,
-                        "email" : "foxtrot@gmail.com",
-                        "designation" : "Team Member",
+                        "children" : [{
+                            "id" : 7,
+                            "name" : "Foxtrot",
+                            "phone" : 1234567890,
+                            "email" : "foxtrot@gmail.com",
+                            "designation" : "Team Member",
+                        },
+                        {
+                            "id" : 17,
+                            "name" : "Mike",
+                            "phone" : 1234567890,
+                            "email" : "mike@gmail.com",
+                            "designation" : "Team Member",
+                        }]
                         }]
                 },{
                     "id" : 8,
@@ -36,12 +44,12 @@ export const data = {
                         "phone" : 1234567890,
                         "email" : "golf@gmail.com",
                         "designation" : "Team Leader",
-                        },{
-                        "id" : 10,
-                        "name" : "Hotel",
-                        "phone" : 1234567890,
-                        "email" : "hotel@gmail.com",
-                        "designation" : "Team Member",
+                        "children" : [{
+                            "id" : 10,
+                            "name" : "Hotel",
+                            "phone" : 1234567890,
+                            "email" : "hotel@gmail.com",
+                            "designation" : "Team Member",}]
                         }]
                 }]
             },
@@ -60,12 +68,13 @@ export const data = {
                         "phone" : 1234567890,
                         "email" : "india@gmail.com",
                         "designation" : "Team Leader",
-                        },{
-                        "id" : 13,
-                        "name" : "Juliet",
-                        "phone" : 1234567890,
-                        "email" : "juliet@gmail.com",
-                        "designation" : "Team Member",
+                        "children" : [{
+                            "id" : 13,
+                            "name" : "Juliet",
+                            "phone" : 1234567890,
+                            "email" : "juliet@gmail.com",
+                            "designation" : "Team Member",
+                        }]
                         }]
                 }]
             },
@@ -84,12 +93,13 @@ export const data = {
                         "phone" : 1234567890,
                         "email" : "kilo@gmail.com",
                         "designation" : "Team Leader",
-                        },{
-                        "id" : 16,
-                        "name" : "Lima",
-                        "phone" : 1234567890,
-                        "email" : "lima@gmail.com",
-                        "designation" : "Team Member",
+                        "children" : [{
+                            "id" : 16,
+                            "name" : "Lima",
+                            "phone" : 1234567890,
+                            "email" : "lima@gmail.com",
+                            "designation" : "Team Member",
+                        }]
                         }]
                 }]
             }]

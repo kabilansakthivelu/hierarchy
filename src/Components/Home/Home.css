@@ -1,0 +1,6 @@
+.hierarchy{
+    @apply flex flex-row items-center space-x-3 mx-10
+} 
+.card{
+    @apply border-2 border-black w-44 text-center space-y-2 py-2 my-5
+}
