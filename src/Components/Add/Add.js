@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
+import {useNavigate} from 'react-router-dom';
 import {data} from '../../data';
 import './Add.css';
 
@@ -12,11 +13,49 @@ const Add = () => {
       return item.id === parseInt(departmentChosen);
   })
 
+  const nameRef = useRef();
+  const emailRef = useRef();
+  const phoneRef = useRef();
+
+  const navigate = useNavigate();
+
+  const addMember = (e) =>{
+    e.preventDefault();
+    const email = emailRef.current.value;
+    const phone  = phoneRef.current.value;
+    const name = nameRef.current.value;
+    if((email !== "") && (phone !== "") && (name !== "")){
+    const newMember = {
+      "id": new Date().getTime().toString(),
+      "name": name,
+      "phone": phone,
+      "email": email,
+      "designation": "Team Member",
+    }
+    data.employees[0].children.map((item)=>{
+      if(item.id !== parseInt(departmentChosen)){
+        return item;
+      }
+      else{
+        return item.children.map((team)=>{
+          if(team.id !== parseInt(teamChosen)){
+            return team;
+          }
+          else{
+            return team.children[0].children.push(newMember);
+          }
+        })
+      }
+    })
+    navigate("/");
+    }    
+  }
+
   return (
-  <div>
-  <form >
+  <div className="singleEmployeeView">
+  <form className="employeeDetails">
   <label htmlFor="department">Department</label>
-  <select id="department" onChange={(e)=>{setDepartmentChosen(e.target.value)}}>
+  <select id="department" onChange={(e)=>{setDepartmentChosen(e.target.value); setTeamChosen()}}>
   <option value="null">Please select</option>
   <option value="2">HR</option>
   <option value="3">Engineering</option>
@@ -32,17 +71,19 @@ const Add = () => {
   })}
   </select>
   {teamChosen && 
-  <div>
-  <label htmlFor="name"></label>
-  <input type="text" name="name" id="name" />
-  <label htmlFor="email"></label>
-  <input type="email" name="email" id="email" />
-  <label htmlFor="phone"></label>
-  <input type="number" name="phone" id="phone" />
+  <div className="form">
+  <label htmlFor="name">Name</label>
+  <input ref={nameRef} required type="text" name="name" id="name" maxLength="10"/><br />
+  <label htmlFor="email">Email</label>
+  <input ref={emailRef} required type="email" name="email" id="email" /><br />
+  <label htmlFor="phone">Phone</label>
+  <input ref={phoneRef} required type="number" name="phone" id="phone"/>
   </div>
   }
   </div>
   }
+  <br />
+  <button className="homePageCTABtn" onClick={addMember}>Add a member</button>
   </form>
   </div>
   );
