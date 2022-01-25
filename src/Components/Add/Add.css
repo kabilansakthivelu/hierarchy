@@ -1,7 +1,7 @@
-label{
+.fieldName{
     @apply font-semibold pr-4
 }
-select, input{
+.dropdown, .inputField{
     @apply border-2 border-gray-400 p-1 rounded-xl
 }
 .form{

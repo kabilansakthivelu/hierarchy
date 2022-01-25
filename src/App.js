@@ -25,7 +25,7 @@ function App() {
   if(allEmployees){
   return (
     <Router>
-    <ValuesContext.Provider value={{showEmployee, setShowEmployee}}>
+    <ValuesContext.Provider value={{showEmployee, setShowEmployee, allEmployees}}>
     <Header/>
       <Routes>
         <Route exact path="/" element={<Home data={allEmployees}/>}/>

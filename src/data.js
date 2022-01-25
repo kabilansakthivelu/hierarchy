@@ -14,6 +14,7 @@ export const data = {
                 "children" : [{
                     "id" : 5,
                     "name" : "Team 1",
+                    "isTeam" : true,
                     "children" : [{
                         "id" : 6,
                         "name" : "Echo",
@@ -38,6 +39,7 @@ export const data = {
                 },{
                     "id" : 8,
                     "name" : "Team 2",
+                    "isTeam" : true,
                     "children" : [{
                         "id" : 9,
                         "name" : "Golf",
@@ -62,6 +64,7 @@ export const data = {
                 "children" : [{
                     "id" : 11,
                     "name" : "Team 3",
+                    "isTeam" : true,
                     "children" : [{
                         "id" : 12,
                         "name" : "India",
@@ -87,6 +90,7 @@ export const data = {
                 "children" : [{
                     "id" : 14,
                     "name" : "Team 4",
+                    "isTeam" : true,
                     "children" : [{
                         "id" : 15,
                         "name" : "Kilo",

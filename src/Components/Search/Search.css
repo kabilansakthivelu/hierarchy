@@ -1,0 +1,12 @@
+.filterSection{
+    @apply border-r-2 border-gray-500 h-screen p-4 w-1/5
+}
+.filterByDepartment, .filterByTeam{
+    @apply space-y-4 my-8
+}
+.filterByDepartmentHeading, .filterByTeamHeading{
+    @apply font-semibold
+}
+.radioButtonLabel{
+    @apply ml-2
+}

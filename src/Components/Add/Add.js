@@ -54,8 +54,8 @@ const Add = () => {
   return (
   <div className="singleEmployeeView">
   <form className="employeeDetails">
-  <label htmlFor="department">Department</label>
-  <select id="department" onChange={(e)=>{setDepartmentChosen(e.target.value); setTeamChosen()}}>
+  <label className="fieldName" htmlFor="department">Department</label>
+  <select className="dropdown" id="department" onChange={(e)=>{setDepartmentChosen(e.target.value); setTeamChosen()}}>
   <option value="null">Please select</option>
   <option value="2">HR</option>
   <option value="3">Engineering</option>
@@ -63,8 +63,8 @@ const Add = () => {
   </select>
   {departmentChosen &&
   <div>
-  <label htmlFor="team">Team</label>
-  <select id="team" onChange={(e)=>{setTeamChosen(e.target.value)}}>
+  <label className="fieldName" htmlFor="team">Team</label>
+  <select className="dropdown" id="team" onChange={(e)=>{setTeamChosen(e.target.value)}}>
   <option value="null">Please select</option>
   {selectedDept.children.map((item)=>{
     return (<option key={item.id} value={item.id}>{item.name}</option>)
@@ -72,12 +72,12 @@ const Add = () => {
   </select>
   {teamChosen && 
   <div className="form">
-  <label htmlFor="name">Name</label>
-  <input ref={nameRef} required type="text" name="name" id="name" maxLength="10"/><br />
-  <label htmlFor="email">Email</label>
-  <input ref={emailRef} required type="email" name="email" id="email" /><br />
-  <label htmlFor="phone">Phone</label>
-  <input ref={phoneRef} required type="number" name="phone" id="phone"/>
+  <label className="fieldName" htmlFor="name">Name</label>
+  <input className="inputField" ref={nameRef} required type="text" name="name" id="name" maxLength="10"/><br />
+  <label className="fieldName" htmlFor="email">Email</label>
+  <input className="inputField" ref={emailRef} required type="email" name="email" id="email" /><br />
+  <label className="fieldName" htmlFor="phone">Phone</label>
+  <input className="inputField" ref={phoneRef} required type="number" name="phone" id="phone"/>
   </div>
   }
   </div>
