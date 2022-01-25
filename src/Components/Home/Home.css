@@ -2,5 +2,14 @@
     @apply flex flex-row items-center space-x-3 mx-10
 } 
 .card{
-    @apply border-2 border-gray-400 w-44 text-center space-y-2 py-4 my-5 cursor-pointer rounded-xl
+    @apply border-2 border-gray-400 w-44 text-center space-y-2 py-4 my-5 cursor-pointer rounded-xl z-0
+}
+.moreOptionsIcon{
+    @apply float-right mr-1 hidden
+}
+.menuModal{
+    @apply border-2 border-gray-200 rounded-xl px-3 relative right-4 z-10 bg-blue-300
+}
+.menus{
+    @apply cursor-pointer
 }
