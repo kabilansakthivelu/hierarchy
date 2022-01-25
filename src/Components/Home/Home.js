@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import {Link, useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import {ValuesContext} from '../../App';
 import "./Home.css";
 
@@ -11,7 +11,7 @@ const Home = ({ data }) => {
 
   const navigate = useNavigate();
 
-  const showEmployeeDetails = (item) =>{
+   const showEmployeeDetails = (item) =>{
     if(item.designation){
     setShowEmployee(item);
     navigate("/view");
