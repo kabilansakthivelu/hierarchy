@@ -56,19 +56,62 @@ const Search = () => {
     arr = [];
   }
 
+  // Apply filter function will be triggered on selecting a radio button on filter section
+
+  const applyFilter = (e) =>{
+
+    let key = e.target.value;
+
+    if(key){
+    const array = [];
+
+    const filters = (data) =>{
+    data.forEach((item)=>{
+      array.push(item);
+      if(item.children){
+        filters(item.children);
+        }
+    })
+  }
+  allEmployees[0].children.forEach((item)=>{
+          if(item.designation.includes(key)){
+            filters(item.children)
+          }
+          else{
+            item.children.forEach((subItem)=>{
+            if(subItem.name.includes(key)){
+              filters(subItem.children)
+            }
+          })
+      }
+  })
+      setSearchResults(array);
+    }
+  }
+
+  // Clear Filter function
+
+  const clearFilter = () =>{
+    let radioButtons = document.getElementsByName("search");
+    for(let i=0;i<radioButtons.length;i++){
+      radioButtons[i].checked = false;
+    }
+    setSearchResults(allEmployeesArray);
+  }
+
   return (
   <div>
-  <div className="filterSection">
+  <div className="filterSection" onClick={applyFilter}>
 
   {/* Filter by Department */}
 
   <div className="filterByDepartment">
   <h1 className="filterByDepartmentHeading">Filter by Department</h1>
-  <input type="radio" name="department" value="HR" id="HR" />
+  <input type="radio" name="search" value="HR" id="HR" />
   <label className="radioButtonLabel" htmlFor="HR">HR</label><br />
-  <input type="radio" name="department" value="Engineering" id="Engineering" />
+  <input type="radio" name="search" value="Engineering" id="Engineering" />
   <label className="radioButtonLabel" htmlFor="Engineering">Engineering</label><br />
-   <input type="radio" name="department" value="Design" id="Design" />
+   <input type="radio" name="search" value="Design" id="Design" />
   <label className="radioButtonLabel" htmlFor="Design">Design</label>
   </div>
 
@@ -80,14 +123,14 @@ const Search = () => {
     return item.children.map((team)=>{
       return (
       <div key={item.id}>
-      <input type="radio" id={team.id} name="team" value={team.name}/>
+      <input type="radio" id={team.id} name="search" value={team.name}/>
       <label className="radioButtonLabel" htmlFor={team.id}>{team.name}</label>
       </div>
       )
     })
   })}
   </div>
-  <button className="clearFiltersBtn">Clear Filters</button>
+  <button className="clearFiltersBtn" onClick={clearFilter}>Clear Filter</button>
   </div>
 
 {/* Search section */}
