@@ -1,5 +1,5 @@
 .filterSection{
-    @apply border-r-2 border-gray-500 h-screen p-4 w-1/5
+    @apply border-r-2 border-gray-500 h-screen p-4 w-1/5 float-left
 }
 .filterByDepartment, .filterByTeam{
     @apply space-y-4 my-8
@@ -9,4 +9,19 @@
 }
 .radioButtonLabel{
     @apply ml-2
+}
+.clearFiltersBtn{
+    @apply border-2 border-black rounded-lg p-2
+}
+.searchField{
+    @apply flex items-center justify-center pt-10
+}
+.searchInputField{
+    @apply border-2 border-black rounded-2xl w-2/5 pl-4 h-10
+}
+.searchResults{
+    @apply flex flex-row flex-wrap space-y-2 p-4 justify-between mt-6
+}
+.cardInSearchPage{
+    @apply py-4 border-2 w-48 border-gray-500 rounded-lg text-center h-24
 }

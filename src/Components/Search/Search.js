@@ -6,6 +6,21 @@ const Search = () => {
 
   const {allEmployees} = useContext(ValuesContext);
 
+  //Pushing all the employees details in one array
+
+  const allEmployeesArray = [];
+
+  const fetchingAllEmployees = (data) =>{
+    data.forEach((item)=>{
+      allEmployeesArray.push(item);
+      if(item.children){
+        fetchingAllEmployees(item.children);
+        }
+    })
+  }
+
+  fetchingAllEmployees(allEmployees);
+
   return (
   <div>
   <div className="filterSection">
@@ -29,7 +44,7 @@ const Search = () => {
   {allEmployees[0].children.map((item)=>{
     return item.children.map((team)=>{
       return (
-      <div>
+      <div key={item.id}>
       <input type="radio" id={team.id} name="team" value={team.name}/>
       <label className="radioButtonLabel" htmlFor={team.id}>{team.name}</label>
       </div>
@@ -37,8 +52,29 @@ const Search = () => {
     })
   })}
   </div>
-
+  <button className="clearFiltersBtn">Clear Filters</button>
   </div>
+
+{/* Search section */}
+
+  <div>
+  <div className="searchField">
+  <input type="text" placeholder="Search employee..." className="searchInputField"/>
+  </div>
+  <div className="searchResults">
+  {allEmployeesArray.map((item)=>{
+    if(!item.isTeam){
+    return (
+      <div className="cardInSearchPage">
+      <h1><b>{item.name}</b></h1>
+      <p><i>{item.designation}</i></p>
+      </div>
+    )
+    }
+  })}
+  </div>
+  </div>
+
   </div>);
 };
 
