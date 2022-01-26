@@ -2,13 +2,13 @@ export const data = {
     employees : [{
             "id" : 1,
             "name" : "Alpha",
-            "phone" : 1234567890,
+            "phone" : 434537890,
             "email" : "alpha@gmail.com",
             "designation" : "Chief Executive Officer",
             "children" : [{
                 "id" : 2,
                 "name" : "Bravo",
-                "phone" : 1234567890,
+                "phone" : 3463567890,
                 "email" : "bravo@gmail.com",
                 "designation" : "Head of Staff / HR",
                 "children" : [{
@@ -18,20 +18,20 @@ export const data = {
                     "children" : [{
                         "id" : 6,
                         "name" : "Echo",
-                        "phone" : 1234567890,
+                        "phone" : 13464567890,
                         "email" : "echo@gmail.com",
                         "designation" : "Team Leader",
                         "children" : [{
                             "id" : 7,
                             "name" : "Foxtrot",
-                            "phone" : 1234567890,
+                            "phone" : 56234567890,
                             "email" : "foxtrot@gmail.com",
                             "designation" : "Team Member",
                         },
                         {
                             "id" : 17,
                             "name" : "Mike",
-                            "phone" : 1234567890,
+                            "phone" : 7234567890,
                             "email" : "mike@gmail.com",
                             "designation" : "Team Member",
                         }]
@@ -43,13 +43,13 @@ export const data = {
                     "children" : [{
                         "id" : 9,
                         "name" : "Golf",
-                        "phone" : 1234567890,
+                        "phone" : 9234567890,
                         "email" : "golf@gmail.com",
                         "designation" : "Team Leader",
                         "children" : [{
                             "id" : 10,
                             "name" : "Hotel",
-                            "phone" : 1234567890,
+                            "phone" : 8623456790,
                             "email" : "hotel@gmail.com",
                             "designation" : "Team Member",}]
                         }]
@@ -58,7 +58,7 @@ export const data = {
             {
                 "id" : 3,
                 "name" : "Charlie",
-                "phone" : 1234567890,
+                "phone" : 7784567890,
                 "email" : "charlie@gmail.com",
                 "designation" : "Head of Engineering",
                 "children" : [{
@@ -68,7 +68,7 @@ export const data = {
                     "children" : [{
                         "id" : 12,
                         "name" : "India",
-                        "phone" : 1234567890,
+                        "phone" : 6634567890,
                         "email" : "india@gmail.com",
                         "designation" : "Team Leader",
                         "children" : [{
@@ -84,7 +84,7 @@ export const data = {
             {
                 "id" : 4,
                 "name" : "Delta",
-                "phone" : 1234567890,
+                "phone" : 9988767890,
                 "email" : "delta@gmail.com",
                 "designation" : "Head of Design",
                 "children" : [{
@@ -94,13 +94,13 @@ export const data = {
                     "children" : [{
                         "id" : 15,
                         "name" : "Kilo",
-                        "phone" : 1234567890,
+                        "phone" : 7654567890,
                         "email" : "kilo@gmail.com",
                         "designation" : "Team Leader",
                         "children" : [{
                             "id" : 16,
                             "name" : "Lima",
-                            "phone" : 1234567890,
+                            "phone" : 3334567890,
                             "email" : "lima@gmail.com",
                             "designation" : "Team Member",
                         }]

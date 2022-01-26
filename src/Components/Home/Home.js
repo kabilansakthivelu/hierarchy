@@ -19,7 +19,12 @@ const Home = ({ data }) => {
     setShowEmployee(item);
     navigate("/view");
     }
-  }
+   }
+
+  const editEmployeeDetails = (item) =>{
+    setShowEmployee(item);
+    navigate("/edit");
+    }
 
   return (
     <div>
@@ -33,18 +38,20 @@ const Home = ({ data }) => {
               <h1><b>{item.name}</b></h1>
               <p><i>{item.designation}</i></p>
             </div>
-            {showMenu && 
-             (<div className="menuModal" id={item.id}>
-            <p className="menus">View</p><hr />
-            <p className="menus">Edit</p>
-            {(item.designation === "Team Member") &&
+            {showMenu && (
+            <div className="menuModal">
+            {(item.isTeam !== true) &&
             <div>
-            <hr />
+            <p className="menus" onClick={()=>{showEmployeeDetails(item)}}>View</p><hr />
+            </div>}
+            <p className="menus" onClick={()=>{editEmployeeDetails(item)}}>Edit</p>
+            {(item.designation === "Team Member") &&
+            <div><hr />
             <p className="menus">Delete</p>
             </div>
             }
             </div>
-            )}
+           )}
             {item.children && <Home data={item.children} />}
           </div>
         );
@@ -54,5 +61,3 @@ const Home = ({ data }) => {
 };
 
 export default Home;
-
-//onClick={()=>{showEmployeeDetails(item)}}

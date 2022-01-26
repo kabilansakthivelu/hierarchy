@@ -1,5 +1,6 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useContext, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
+import {ValuesContext} from '../../App';
 import {data} from '../../data';
 import './Add.css';
 
@@ -9,15 +10,15 @@ const Add = () => {
 
   const [teamChosen, setTeamChosen] = useState();
 
+  const {emailRef, nameRef, phoneRef, setAllEmployees, allEmployees} = useContext(ValuesContext);
+
   const selectedDept = data.employees[0].children.find((item)=>{
       return item.id === parseInt(departmentChosen);
   })
 
-  const nameRef = useRef();
-  const emailRef = useRef();
-  const phoneRef = useRef();
-
   const navigate = useNavigate();
+
+  let arr = [];
 
   const addMember = (e) =>{
     e.preventDefault();
@@ -32,7 +33,7 @@ const Add = () => {
       "email": email,
       "designation": "Team Member",
     }
-    data.employees[0].children.map((item)=>{
+    data.employees[0].children.forEach((item)=>{
       if(item.id !== parseInt(departmentChosen)){
         return item;
       }
@@ -50,6 +51,14 @@ const Add = () => {
     navigate("/");
     }    
   }
+
+  useEffect(()=>{
+    setAllEmployees(data.employees);
+  }, [data])
+
+  useEffect(()=>{
+    localStorage.setItem("Employees", JSON.stringify(data.employees));
+  }, [allEmployees])
 
   return (
   <div className="singleEmployeeView">
@@ -73,7 +82,7 @@ const Add = () => {
   {teamChosen && 
   <div className="form">
   <label className="fieldName" htmlFor="name">Name</label>
-  <input className="inputField" ref={nameRef} required type="text" name="name" id="name" maxLength="10"/><br />
+  <input className="inputField" ref={nameRef} required type="text" name="name" id="name" maxLength="12"/><br />
   <label className="fieldName" htmlFor="email">Email</label>
   <input className="inputField" ref={emailRef} required type="email" name="email" id="email" /><br />
   <label className="fieldName" htmlFor="phone">Phone</label>

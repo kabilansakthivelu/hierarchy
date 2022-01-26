@@ -1,5 +1,5 @@
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
 import Add from './Components/Add/Add';
@@ -17,15 +17,24 @@ function App() {
 
   const [allEmployees, setAllEmployees] = useState();
 
+  const nameRef = useRef();
+  const emailRef = useRef();
+  const phoneRef = useRef();
+
   useEffect(()=>{
+    if(localStorage.getItem("Employees")){
+      setAllEmployees(JSON.parse(localStorage.getItem("Employees")));
+    }
+    else{
     localStorage.setItem("Employees", JSON.stringify(data.employees));
     setAllEmployees(data.employees);
+    }
   }, [data])
 
   if(allEmployees){
   return (
     <Router>
-    <ValuesContext.Provider value={{showEmployee, setShowEmployee, allEmployees}}>
+    <ValuesContext.Provider value={{showEmployee, setShowEmployee, allEmployees, nameRef, emailRef, phoneRef, setAllEmployees}}>
     <Header/>
       <Routes>
         <Route exact path="/" element={<Home data={allEmployees}/>}/>

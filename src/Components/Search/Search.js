@@ -97,6 +97,7 @@ const Search = () => {
       radioButtons[i].checked = false;
     }
     setSearchResults(allEmployeesArray);
+    setSearchKey("");
   }
 
   return (
@@ -130,7 +131,7 @@ const Search = () => {
     })
   })}
   </div>
-  <button className="clearFiltersBtn" onClick={clearFilter}>Clear Filter</button>
+  <button className="homePageCTABtn" onClick={clearFilter}>Clear Filter</button>
   </div>
 
 {/* Search section */}

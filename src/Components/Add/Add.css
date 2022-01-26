@@ -1,9 +1,6 @@
 .fieldName{
-    @apply font-semibold pr-4
+    @apply font-semibold pr-4 
 }
 .dropdown, .inputField{
-    @apply border-2 border-gray-400 p-1 rounded-xl
-}
-.form{
-    @apply space-y-5
+    @apply border-2 border-gray-400 my-2 p-1 rounded-xl w-56 flex pl-4
 }
