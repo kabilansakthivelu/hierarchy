@@ -1,5 +1,5 @@
 .hierarchy{
-    @apply flex flex-row items-center space-x-3 mx-10
+    @apply flex flex-row items-center space-x-3 mx-10 
 } 
 .card{
     @apply border-2 border-gray-400 w-44 text-center space-y-2 py-4 my-5 cursor-pointer rounded-xl z-0
